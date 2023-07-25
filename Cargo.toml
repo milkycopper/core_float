@@ -1,0 +1,13 @@
+[package]
+name = "core_float"
+version = "0.1.0"
+edition = "2021"
+
+license = "MIT"
+description = "Traits that provide common functions of f32 and f64 in the Rust Core Library. Expect to provide a common subset of functions for f32 and f64 while ensuring consistency across platforms."
+repository = "https://github.com/milkycopper/core_float"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
