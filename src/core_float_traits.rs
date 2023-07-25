@@ -49,7 +49,7 @@ pub trait CoreFloat:
     + DivAssign<Self>
     + Rem<Self, Output = Self>
     + RemAssign<Self>
-    + Neg
+    + Neg<Output = Self>
     + PartialEq
     + PartialOrd
     + Product
