@@ -1,5 +1,5 @@
 # core_float
 
-Traits that provide common functions of f32 and f64 in the Rust Core Library.
+This library is based on the **Rust Core Library** and aims to provide an identical set of APIs for **_f32_** and **_f64_** floating-point types.
 
-Expect to provide a common subset of functions for f32 and f64 while ensuring consistency across platforms.
+With the help of this library, you can write identical code for both f32 and f64 types. And since the library is #![no_std], its calculation results have cross platform consistency.

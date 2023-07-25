@@ -1,10 +1,10 @@
 [package]
 name = "core_float"
-version = "0.1.2"
+version = "0.2.0"
 edition = "2021"
 
 license = "MIT"
-description = "Traits that provide common functions of f32 and f64 in the Rust Core Library. Expect to provide a common subset of functions for f32 and f64 while ensuring consistency across platforms."
+description = "This library is based on the Rust Core Library and aims to provide an identical set of APIs for f32 and f64 floating-point types."
 repository = "https://github.com/milkycopper/core_float"
 readme = "README.md"
 

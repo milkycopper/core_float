@@ -31,7 +31,7 @@ macro_rules! impl_core_float_popular_consts {
 }
 
 macro_rules! impl_core_float {
-    ( $float_t: ty, $from_f32: tt, $from_f64: tt, $value: tt ) => {
+    ( $float_t: ty ) => {
         impl CoreFloat for $float_t {
             fn clamp(self, min: Self, max: Self) -> Self {
                 <$float_t>::clamp(self, min, max)
@@ -77,12 +77,6 @@ macro_rules! impl_core_float {
             }
             fn total_cmp(&self, other: &Self) -> Ordering {
                 <$float_t>::total_cmp(self, other)
-            }
-            fn from_f32($value: f32) -> Self {
-                $from_f32
-            }
-            fn from_f64($value: f64) -> Self {
-                $from_f64
             }
         }
     };

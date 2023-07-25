@@ -1,8 +1,8 @@
 #![no_std]
-#![allow(unused_braces)]
 
+mod f32;
+mod f64;
 mod impl_core_float_macros;
 
 pub mod core_float_traits;
-pub mod f32;
-pub mod f64;
+pub use core_float_traits::*;

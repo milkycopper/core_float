@@ -1,11 +1,12 @@
 use core::{
     cmp::Ordering,
-    fmt::{Debug, Display},
+    fmt::{Debug, Display, UpperExp},
     iter::{Product, Sum},
     num::FpCategory,
     ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Rem, RemAssign, Sub, SubAssign},
 };
 
+/// Associated constants for f32/f64
 pub trait CoreFloatAssociatedConsts {
     const DIGITS: u32;
     const EPSILON: Self;
@@ -23,6 +24,7 @@ pub trait CoreFloatAssociatedConsts {
     const RADIX: u32;
 }
 
+/// Often used constants for f32/f64
 pub trait CoreFloatPopularConsts {
     const ZERO: Self;
     const ONE: Self;
@@ -30,7 +32,13 @@ pub trait CoreFloatPopularConsts {
     const HALF: Self;
 }
 
-/// Trait implemented by f32 and f64, providing a cross-platform consistent trait for f32/f64 float type.
+/// Float type can be converted from f32/f64
+pub trait FromF32F64: Sized {
+    fn from_f32(value: f32) -> Self;
+    fn from_f64(value: f64) -> Self;
+}
+
+/// Trait implemented by f32 and f64, providing cross-platform consistent functions for f32/f64 float type.
 pub trait CoreFloat:
     CoreFloatAssociatedConsts
     + CoreFloatPopularConsts
@@ -56,6 +64,7 @@ pub trait CoreFloat:
     + for<'a> Product<&'a Self>
     + Sum
     + for<'a> Sum<&'a Self>
+    + UpperExp
 {
     fn clamp(self, min: Self, max: Self) -> Self;
     fn classify(self) -> FpCategory;
@@ -72,8 +81,6 @@ pub trait CoreFloat:
     fn to_degrees(self) -> Self;
     fn to_radians(self) -> Self;
     fn total_cmp(&self, other: &Self) -> Ordering;
-    fn from_f32(value: f32) -> Self;
-    fn from_f64(value: f64) -> Self;
 
     fn double(self) -> Self {
         self * Self::TWO
