@@ -1,5 +1,5 @@
 use crate::core_float_traits::{
-    CoreFloat, CoreFloatAssociatedConsts, CoreFloatPopularConsts, FromF32F64,
+    CoreFloat, CoreFloatAssociatedConsts, CoreFloatBasicMathConsts, FromF32F64,
 };
 use crate::impl_core_float_macros::{
     impl_core_float, impl_core_float_associated_consts, impl_core_float_popular_consts,

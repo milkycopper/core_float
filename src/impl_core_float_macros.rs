@@ -20,12 +20,31 @@ macro_rules! impl_core_float_associated_consts {
 }
 
 macro_rules! impl_core_float_popular_consts {
-    ( $float_t: ty ) => {
-        impl CoreFloatPopularConsts for $float_t {
+    ( $float_t: tt ) => {
+        impl CoreFloatBasicMathConsts for $float_t {
             const ZERO: Self = 0.0;
             const ONE: Self = 1.0;
             const TWO: Self = 2.0;
             const HALF: Self = 0.5;
+            const E: Self = core::$float_t::consts::E;
+            const FRAC_1_PI: Self = core::$float_t::consts::FRAC_1_PI;
+            const FRAC_1_SQRT_2: Self = core::$float_t::consts::FRAC_1_SQRT_2;
+            const FRAC_2_PI: Self = core::$float_t::consts::FRAC_2_PI;
+            const FRAC_2_SQRT_PI: Self = core::$float_t::consts::FRAC_2_SQRT_PI;
+            const FRAC_PI_2: Self = core::$float_t::consts::FRAC_PI_2;
+            const FRAC_PI_3: Self = core::$float_t::consts::FRAC_PI_3;
+            const FRAC_PI_4: Self = core::$float_t::consts::FRAC_PI_4;
+            const FRAC_PI_6: Self = core::$float_t::consts::FRAC_PI_6;
+            const FRAC_PI_8: Self = core::$float_t::consts::FRAC_PI_8;
+            const LN_2: Self = core::$float_t::consts::LN_2;
+            const LN_10: Self = core::$float_t::consts::LN_10;
+            const LOG2_10: Self = core::$float_t::consts::LOG2_10;
+            const LOG2_E: Self = core::$float_t::consts::LOG2_E;
+            const LOG10_2: Self = core::$float_t::consts::LOG10_2;
+            const LOG10_E: Self = core::$float_t::consts::LOG10_E;
+            const PI: Self = core::$float_t::consts::PI;
+            const SQRT_2: Self = core::$float_t::consts::SQRT_2;
+            const TAU: Self = core::$float_t::consts::TAU;
         }
     };
 }
